@@ -1,0 +1,11 @@
+# Editor directories and files
+.vscode
+.DS_Store
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Development only
+*.map
+.env
