@@ -47,7 +47,7 @@ A lightweight library for adding divider lines to CSS grid layouts. This library
 
 	// Or with a custom container selector
 	const gridLines = new GridLines({
-		containerSelector: '.my-custom-container'
+		containerSelector: '.my-container'
 	});
 	```
 
