@@ -10,13 +10,13 @@
 			--gl-line-width: 2px;     /* Change line width */
 			--gl-line-color: #cccccc; /* Change line color */
 		}
-
+		
 		.container {
 			width: 100%;
 			max-width: 1440px;
 			margin: 2rem auto;
 		}
-
+		
 	</style>
 	<div class="container">
 		<!-- Your grid container -->
@@ -120,7 +120,7 @@
 			}
 		}
 	</style>
-
+	
 	<div class="container">
 		<div class="emoji-grid">
 			<div><span>😀</span></div>
@@ -151,7 +151,6 @@
 			<div><span>✨</span></div>
 			<div><span>🔥</span></div>
 			<div><span>❤️</span></div>
-			<div><span>🥹</span></div>
 			<div><span>👍</span></div>
 			<div><span>🙏</span></div>
 			<div><span>💯</span></div>
@@ -159,7 +158,6 @@
 			<div><span>🎉</span></div>
 			<div><span>👀</span></div>
 			<div><span>💅</span></div>
-			<div><span>🫶</span></div>
 			<div><span>🤔</span></div>
 			<div><span>💁</span></div>
 			<div><span>🙈</span></div>
@@ -168,8 +166,6 @@
 			<div><span>💖</span></div>
 			<div><span>🥳</span></div>
 			<div><span>😎</span></div>
-			<div><span>🫡</span></div>
-			<div><span>🤌</span></div>
 			<div><span>💝</span></div>
 			<div><span>🌟</span></div>
 			<div class="add-emoji"><span class="add-emoji-icon"><span>➕</span></span></div>
@@ -197,7 +193,7 @@
 				}
 			}
 		}
-
+		
 		div.add-emoji {
 			cursor: pointer;
 			padding: 0;
@@ -205,7 +201,7 @@
 			justify-content: stretch;
 			align-items: stretch;
 		}
-
+		
 		.emoji-grid {
 			& > div {
 				& > span.add-emoji-icon {
@@ -225,13 +221,13 @@
 	</style>
 	<script>
 		const emojis = ['😀', '😃', '😄', '😁', '😆', '😅', '🤣', '😂', '🙂', '🙃', 
-						'😉', '😊', '😇', '🥰', '😍', '🤩', '😘', '😗', '☺️', '😚',
-						'😭', '✨', '🔥', '❤️', '🥹', '👍', '🙏', '💯', '💪', '🎉'];
-
+		'😉', '😊', '😇', '🥰', '😍', '🤩', '😘', '😗', '😚',
+		'😭', '✨', '🔥', '❤️', '👍', '🙏', '💯', '💪', '🎉'];
+		
 		function getRandomEmoji() {
 			return emojis[Math.floor(Math.random() * emojis.length)];
 		}
-
+		
 		function handleEmojiClick(event) {
 			if (!event.target.closest('.add-emoji')) {
 				const emojiDiv = event.target.closest('div');
@@ -241,9 +237,9 @@
 				}
 			}
 		}
-
+		
 		document.querySelector('.emoji-grid').addEventListener('click', handleEmojiClick);
-
+		
 		document.querySelector('.add-emoji').addEventListener('click', () => {
 			const newEmojiDiv = document.createElement('div');
 			newEmojiDiv.innerHTML = `<span>${getRandomEmoji()}</span>`;
@@ -251,7 +247,7 @@
 			emojiGridLines.adjustGridLines();
 		});
 	</script>
-
+	
 	<script src="build/grid-lines.min.js"></script>
 	<script>
 		// Initialize with default container selector (.gl-container)
