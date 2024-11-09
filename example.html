@@ -10,33 +10,15 @@
 			--gl-line-color: #cccccc; /* Change line color */
 		}
 
-		.grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 4rem;
-			> div {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-		}
-		/* Add media query for screens smaller than 781px */
-		@media screen and (max-width: 781px) {
-			.grid {
-				grid-template-columns: 1fr; /* Single column */
-			}
-		}
-
 		.container {
 			width: 100%;
 			max-width: 1440px;
-			margin: 0 auto;
+			margin: 2rem auto;
 		}
-
 
 	</style>
 	<div class="container">
-	<!-- Your grid container -->
+		<!-- Your grid container -->
 		<div class="grid gl-container">
 			<!-- Grid items -->
 			<div>
@@ -119,6 +101,103 @@
 			</div>
 		</div>
 	</div>
+	<style>
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 4rem;
+			> div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+		/* Add media query for screens smaller than 781px */
+		@media screen and (max-width: 781px) {
+			.grid {
+				grid-template-columns: 1fr; /* Single column */
+			}
+		}
+	</style>
+
+	<div class="container">
+		<div class="emoji-grid gl-container">
+			<div><span>😀</span></div>
+			<div><span>😃</span></div>
+			<div><span>😄</span></div>
+			<div><span>😁</span></div>
+			<div><span>😆</span></div>
+			<div><span>😅</span></div>
+			<div><span>🤣</span></div>
+			<div><span>😂</span></div>
+			<div><span>🙂</span></div>
+			<div><span>🙃</span></div>
+			<div><span>😉</span></div>
+			<div><span>😊</span></div>
+			<div><span>😇</span></div>
+			<div><span>🥰</span></div>
+			<div><span>😍</span></div>
+			<div><span>🤩</span></div>
+			<div><span>😘</span></div>
+			<div><span>😗</span></div>
+			<div><span>☺️</span></div>
+			<div><span>😚</span></div>
+			<div><span>😀</span></div>
+			<div><span>😂</span></div>
+			<div><span>🥰</span></div>
+			<div><span>😍</span></div>
+			<div><span>🥺</span></div>
+			<div><span>😭</span></div>
+			<div><span>✨</span></div>
+			<div><span>🔥</span></div>
+			<div><span>❤️</span></div>
+			<div><span>🥹</span></div>
+			<div><span>👍</span></div>
+			<div><span>🙏</span></div>
+			<div><span>💯</span></div>
+			<div><span>💪</span></div>
+			<div><span>🎉</span></div>
+			<div><span>👀</span></div>
+			<div><span>💅</span></div>
+			<div><span>🫶</span></div>
+			<div><span>🤔</span></div>
+			<div><span>💁</span></div>
+			<div><span>🙈</span></div>
+			<div><span>💫</span></div>
+			<div><span>🤗</span></div>
+			<div><span>💖</span></div>
+			<div><span>🥳</span></div>
+			<div><span>😎</span></div>
+			<div><span>🫡</span></div>
+			<div><span>🤌</span></div>
+			<div><span>💝</span></div>
+			<div><span>🌟</span></div>
+		</div>
+	</div>
+	<style>
+		.emoji-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+			gap: 1rem;
+			> div {
+				padding: 1rem;
+				font-size: 2rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				aspect-ratio: 1;
+				> span {
+					display: inline-block;
+					transition: transform 0.2s ease;
+					&:hover {
+						transform: scale(1.2);
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	</style>
+
 
 	<script src="build/grid-lines.min.js"></script>
 	<script>
