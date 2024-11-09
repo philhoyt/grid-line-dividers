@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="build/grid-lines.min.css">
 </head>
 <body>
@@ -121,7 +122,7 @@
 	</style>
 
 	<div class="container">
-		<div class="emoji-grid gl-container">
+		<div class="emoji-grid">
 			<div><span>😀</span></div>
 			<div><span>😃</span></div>
 			<div><span>😄</span></div>
@@ -140,7 +141,6 @@
 			<div><span>🤩</span></div>
 			<div><span>😘</span></div>
 			<div><span>😗</span></div>
-			<div><span>☺️</span></div>
 			<div><span>😚</span></div>
 			<div><span>😀</span></div>
 			<div><span>😂</span></div>
@@ -172,6 +172,7 @@
 			<div><span>🤌</span></div>
 			<div><span>💝</span></div>
 			<div><span>🌟</span></div>
+			<div class="add-emoji"><span>+</span></div>
 		</div>
 	</div>
 	<style>
@@ -196,18 +197,57 @@
 				}
 			}
 		}
-	</style>
 
+		.add-emoji {
+			border: 2px dashed #ccc;
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+
+		.add-emoji:hover {
+			border-color: #666;
+			background: #f5f5f5;
+		}
+	</style>
+	<script>
+		const emojis = ['😀', '😃', '😄', '😁', '😆', '😅', '🤣', '😂', '🙂', '🙃', 
+						'😉', '😊', '😇', '🥰', '😍', '🤩', '😘', '😗', '☺️', '😚',
+						'😭', '✨', '🔥', '❤️', '🥹', '👍', '🙏', '💯', '💪', '🎉'];
+
+		function getRandomEmoji() {
+			return emojis[Math.floor(Math.random() * emojis.length)];
+		}
+
+		function handleEmojiClick(event) {
+			if (!event.target.closest('.add-emoji')) {
+				const emojiDiv = event.target.closest('div');
+				if (emojiDiv && emojiDiv !== event.currentTarget) {
+					emojiDiv.remove();
+					emojiGridLines.adjustGridLines();
+				}
+			}
+		}
+
+		document.querySelector('.emoji-grid').addEventListener('click', handleEmojiClick);
+
+		document.querySelector('.add-emoji').addEventListener('click', () => {
+			const newEmojiDiv = document.createElement('div');
+			newEmojiDiv.innerHTML = `<span>${getRandomEmoji()}</span>`;
+			document.querySelector('.add-emoji').insertAdjacentElement('beforebegin', newEmojiDiv);
+			emojiGridLines.adjustGridLines();
+		});
+	</script>
 
 	<script src="build/grid-lines.min.js"></script>
 	<script>
 		// Initialize with default container selector (.gl-container)
 		const gridLines = new GridLines();
 		
-		// Or with custom container selector
-		// const gridLines = new GridLines({
-		// 	containerSelector: '.my-container'
-		// });
+		// Or with custom container selector and remove last item divider
+		const emojiGridLines = new GridLines({
+			containerSelector: '.emoji-grid',
+			removeLastItemDivider: true,
+		});
 	</script>
 </body>
 </html> 

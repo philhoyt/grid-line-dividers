@@ -2,6 +2,7 @@ class GridLines {
 	constructor(options = {}) {
 		this.options = {
 			containerSelector: '.gl-container',
+			removeLastItemDivider: false,
 			...options
 		};
 		
@@ -46,9 +47,12 @@ class GridLines {
 			items.forEach((item, i) => {
 				const isLastInRow = (i + 1) % columnsCount === 0;
 				const isLastRow = i >= (rowCount - 1) * columnsCount;
+				const isLastItem = i === items.length - 1;
 				
 				item.classList.remove("gl-last-in-row", "gl-last-row");
-				if (isLastInRow) item.classList.add("gl-last-in-row");
+				if (isLastInRow || (isLastItem && this.options.removeLastItemDivider)) {
+					item.classList.add("gl-last-in-row");
+				}
 				if (isLastRow) item.classList.add("gl-last-row");
 			});
 		});
