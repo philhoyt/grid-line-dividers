@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "terser": "^5.36.0",
+    "clean-css-cli": "^5.6.2"
+  },
+  "scripts": {
+    "build:js": "mkdir -p build && cp src/grid-lines.js build/ && terser build/grid-lines.js -o build/grid-lines.min.js -c -m",
+    "build:css": "mkdir -p build && cp src/grid-lines.css build/ && cleancss -o build/grid-lines.min.css src/grid-lines.css",
+    "build": "npm run build:js && npm run build:css"
+  }
+}

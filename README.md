@@ -6,12 +6,18 @@ A lightweight library for adding divider lines to CSS grid layouts. This library
 
 1. Include the CSS file in your HTML:
 	```html
-	<link rel="stylesheet" href="grid-lines.css">
+	<!-- Development version -->
+	<link rel="stylesheet" href="dist/grid-lines.css">
+	<!-- Production version -->
+	<link rel="stylesheet" href="dist/grid-lines.min.css">
 	```
 
 2. Include the JavaScript file before closing body tag:
 	```html
-	<script src="grid-lines.js"></script>
+	<!-- Development version -->
+	<script src="dist/grid-lines.js"></script>
+	<!-- Production version -->
+	<script src="dist/grid-lines.min.js"></script>
 	```
 
 ## Usage

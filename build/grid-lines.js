@@ -8,7 +8,6 @@ class GridLines {
 		// Initialize
 		this.init();
 		
-		// Simpler resize handler with throttle via requestAnimationFrame
 		let resizeTimeout;
 		window.addEventListener('resize', () => {
 			if (resizeTimeout) {

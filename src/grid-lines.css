@@ -1,0 +1,41 @@
+/* Root variables with default values */
+:root {
+	--gl-line-width: 1px;
+	--gl-line-color: black;
+}
+
+.gl-item {
+	position: relative;
+}
+
+.gl-item::before,
+.gl-item::after {
+	content: "";
+	position: absolute;
+	/* Use variables with fallbacks */
+	background-color: var(--gl-line-color, black);
+	z-index: 1;
+}
+
+.gl-item::before {
+	/* Vertical line */
+	width: var(--gl-line-width, 1px);
+	height: calc(100% + var(--gl-gap));
+	top: calc(-1 * var(--gl-half-gap));
+	left: calc(100% + var(--gl-half-gap));
+}
+
+.gl-item::after {
+	/* Horizontal line */
+	height: var(--gl-line-width, 1px);
+	width: calc(100% + var(--gl-gap));
+	left: calc(-1 * var(--gl-half-gap));
+	top: calc(100% + var(--gl-half-gap));
+}
+
+.gl-item.gl-last-in-row::before {
+	display: none;
+}
+.gl-item.gl-last-row::after {
+	display: none;
+}
