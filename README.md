@@ -81,6 +81,7 @@ Or target specific containers:
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
 | `containerSelector` | string | '.gl-container' | CSS selector for grid containers |
+| `removeLastItemDivider` | boolean | false | Remove the divider after the last item in the grid if not last in row |
 
 ## Browser Support
 
