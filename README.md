@@ -50,9 +50,10 @@ See it in action:
 	// With default options (uses .gl-container)
 	const gridLines = new GridLines();
 
-	// Or with a custom container selector
+	// With custom options
 	const gridLines = new GridLines({
-		containerSelector: '.my-container'
+		containerSelector: '.my-container',
+		removeLastItemDivider: true
 	});
 	```
 
