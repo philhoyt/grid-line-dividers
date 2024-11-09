@@ -172,7 +172,7 @@
 			<div><span>🤌</span></div>
 			<div><span>💝</span></div>
 			<div><span>🌟</span></div>
-			<div class="add-emoji"><span>+</span></div>
+			<div class="add-emoji"><span class="add-emoji-icon"><span>➕</span></span></div>
 		</div>
 	</div>
 	<style>
@@ -198,15 +198,29 @@
 			}
 		}
 
-		.add-emoji {
-			border: 2px dashed #ccc;
+		div.add-emoji {
 			cursor: pointer;
-			transition: all 0.2s ease;
+			padding: 0;
+			display: flex;
+			justify-content: stretch;
+			align-items: stretch;
 		}
 
-		.add-emoji:hover {
-			border-color: #666;
-			background: #f5f5f5;
+		.emoji-grid {
+			& > div {
+				& > span.add-emoji-icon {
+					border: 2px dashed #ccc;
+					transition: all 0.2s ease;
+					flex-grow: 1;
+					display: grid;
+					place-items: center;
+					&:hover {
+						transform: scale(1.1);
+						border-color: #666;
+						background: #f5f5f5;
+					}
+				}
+			}
 		}
 	</style>
 	<script>
