@@ -16,6 +16,9 @@ class GridLines {
 			}
 			resizeTimeout = requestAnimationFrame(() => this.adjustGridLines());
 		});
+		
+		// Trigger a resize event after initialization to solve for the initial grid size
+		window.dispatchEvent(new Event('resize'));
 	}
 	
 	init() {
