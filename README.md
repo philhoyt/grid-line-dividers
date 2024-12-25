@@ -1,4 +1,4 @@
-# Grid Lines
+# Grid Line Dividers
 
 A lightweight library for adding divider lines to CSS grid layouts. This library automatically adds dividing lines between grid items, adjusting to your grid's gap and layout.
 
